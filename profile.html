@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MineNova Profile</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="profile-card">
+
+<img src="mine1.jpeg" id="profileImage" class="profile-image">
+
+<input type="file" id="photoInput" accept="image/*" hidden>
+<button id="changePhotoBtn">
+
+📷 Change Photo
+
+</button>
+
+<h2 id="profileName">Guest</h2>
+
+<p class="online">
+🟢 Online
+</p>
+
+<hr>
+
+<div class="profile-row">
+    <span>🏆 Level</span>
+    <span id="profileLevel" class="value">1</span>
+</div>
+
+<div class="profile-row">
+    <span>⭐ XP</span>
+    <span id="profileXP" class="value">0</span>
+</div>
+<div class="xp-bar">
+
+    <div id="xpFill" class="xp-fill"></div>
+
+</div>
+
+<p id="xpText">0 / 100 XP</p>
+
+<div class="profile-row">
+    <span>🪙 Coins</span>
+    <span id="profileCoins" class="value">0</span>
+</div>
+
+<div class="profile-row">
+    <span>⚡ Max Energy</span>
+    <span id="profileEnergy" class="value">500</span>
+</div>
+
+<div class="profile-row">
+    <span>⛏️ Mining Speed</span>
+    <span id="profileSpeed" class="value">2.0 sec</span>
+</div>
+
+<div class="profile-row">
+    <span>💎 Rank</span>
+    <span id="profileRank" class="value">Beginner</span>
+</div>
+
+<div class="profile-row">
+    <span>📅 Joined</span>
+    <span id="joinDate" class="value"></span>
+</div>
+
+<hr>
+
+
+<button id="changeNameBtn">
+
+✏️ Change Username
+
+</button>
+
+<button id="saveProfileBtn">
+
+💾 Save Profile
+
+</button>
+
+<button id="logoutBtn">
+
+🚪 Logout
+
+</button>
+
+</div>
+   <script src="profile.js"></script>
+<!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

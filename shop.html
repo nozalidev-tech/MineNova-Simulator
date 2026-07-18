@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MineNova Shop</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🛒 Upgrade Shop</h1>
+
+<!-- Energy -->
+
+<div class="card">
+
+<h2>⚡ Energy Upgrade</h2>
+
+<p>Increase Max Energy +100</p>
+
+<p>Cost :
+<span id="energyCost">500</span> Coins</p>
+
+<button id="energyUpgradeBtn">
+
+Upgrade
+
+</button>
+
+</div>
+
+<!-- Mining Speed -->
+
+<div class="card">
+
+<h2>🚀 Mining Speed</h2>
+
+<p>Mine Faster</p>
+
+<p>Cost :
+<span id="speedCost">1000</span> Coins</p>
+
+<button id="speedUpgradeBtn">
+
+Upgrade
+
+</button>
+
+</div>
+
+<!-- Auto Miner -->
+
+<div class="card">
+
+    <h2>🤖 Auto Miner</h2>
+
+    <p>
+        Current Level :
+        <span id="autoLevel">1</span>
+    </p>
+
+    <p>
+        Reward :
+        <span id="autoReward">+1 Coin / 3 sec</span>
+    </p>
+
+    <p>
+        Status :
+        <span id="autoStatus">🔴 Inactive</span>
+    </p>
+
+    <p>
+        Time Left :
+        <span id="autoTime">00:00:00</span>
+    </p>
+
+    <p>
+        Activation Cost :
+        <span id="autoCost">3000</span>
+        Coins
+    </p>
+
+    <button id="activateAutoMiner">
+
+        ▶ Activate
+
+    </button>
+
+</div>
+
+<button
+class="setting-btn"
+onclick="window.location.href='home.html'">
+
+⬅ Back
+
+</button>
+
+</div>
+
+<script src="shop.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MineNova Lucky Spin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎡 Lucky Spin</h1>
+
+    <p class="spin-info">
+        Watch an ad and spin the wheel to win free coins.
+    </p>
+
+    <!-- Pointer -->
+
+    <div class="pointer">▼</div>
+
+    <!-- Wheel -->
+
+    <div class="wheel-wrapper">
+
+        <canvas
+            id="wheelCanvas"
+            width="350"
+            height="350">
+        </canvas>
+
+    </div>
+
+    <!-- Spin Button -->
+
+    <button id="watchSpinBtn" class="spin-btn">
+
+        🎬 WATCH & SPIN
+
+    </button>
+
+    <!-- Timer -->
+
+    <div id="adBox" class="ad-box">
+
+        <h2>Watching Ad...</h2>
+
+        <p>
+
+            Please Wait
+
+            <span id="adTimer">15</span>
+
+            sec
+
+        </p>
+
+    </div>
+
+    <!-- Result -->
+
+    <div id="resultBox" class="result-box">
+
+        <h2 id="resultText">
+
+            Congratulations
+
+        </h2>
+
+    </div>
+
+    <!-- Next Spin -->
+
+    <div class="next-spin">
+
+        <h3>
+
+            Next Spin
+
+        </h3>
+
+        <p id="nextSpinTimer">
+
+            Ready
+
+        </p>
+
+    </div>
+
+    <!-- Back -->
+
+    <button
+        class="setting-btn"
+        onclick="window.location.href='earn.html'">
+
+        ⬅ Back
+
+    </button>
+
+</div>
+
+<script src="spin.js"></script>
+
+</body>
+</html>

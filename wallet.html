@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MineNova Wallet</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<!-- 
+<h1>👛 Wallet</h1>
+
+
+<div class="card">
+
+
+<p>
+🪙 Total Coins:
+<span id="walletCoins">0</span>
+</p>
+
+
+<p>
+💵 Balance:
+$<span id="walletBalance">0.00</span>
+</p>
+
+<button id="depositBtn">
+Deposit
+</button>
+
+<button id="withdrawBtn">
+Withdraw
+</button>
+
+
+</div> -->
+<h1>👛 My Wallet</h1>
+
+<!-- Balance Card -->
+<div class="card">
+
+    <h2>Total Balance</h2>
+
+    <h1>$<span id="walletBalance">0.00</span></h1>
+
+    <p>Available Balance</p>
+    <hr>
+    <p>
+        💰 Wallet
+
+Coins
+
+Estimated Balance
+
+⚠️ Final conversion rate will be announced in a future update.
+
+------------------
+
+💸 Withdraw
+
+Coming Soon...
+    </p>
+
+</div>
+
+<!-- Coins Card -->
+<div class="card">
+
+    <h2>Total Coins</h2>
+
+    <h1>🪙 <span id="walletCoins">0</span></h1>
+
+</div>
+
+<!-- Buttons -->
+<div class="card">
+
+    <button id="depositBtn">
+        💰 Deposit
+    </button>
+
+    <button id="withdrawBtn">
+        💸 Withdraw
+    </button>
+
+</div>
+<hr>
+
+<h3>📜 Wallet History</h3>
+
+<div id="walletHistory">
+
+    <p>No Wallet Transactions Yet</p>
+
+</div>
+<div class="wallet-status">
+
+    <h3>📊 Wallet Status</h3>
+
+    <div class="status-row">
+        <span>Account</span>
+        <span class="online">🟢 Active</span>
+    </div>
+
+    <div class="status-row">
+        <span>Security</span>
+        <span class="online">🔒 Protected</span>
+    </div>
+
+    <div class="status-row">
+        <span>Network</span>
+        <span class="online">🟢 Online</span>
+    </div>
+
+</div>
+
+<!-- Recent Activity -->
+<div class="card">
+
+    <h2>📜 Recent Activity</h2>
+
+    <div id="activityList">
+
+
+    </div>
+
+</div>
+
+<!-- Back Button -->
+<div class="card">
+
+    <button onclick="window.location.href='index.html'">
+        ⬅ Back To Home
+    </button>
+
+</div>
+
+
+
+<!-- ==========================
+     WALLET POPUP
+========================== -->
+
+<div id="walletPopup" class="popup">
+
+    <div class="popup-content">
+
+        <h2 id="popupTitle">💰 Wallet</h2>
+
+        <p id="popupMessage">Coming Soon</p>
+
+        <button id="popupOkBtn">
+            OK
+        </button>
+
+    </div>
+
+</div>
+<script src="wallet.js"></script>
+</body>
+
+</html>

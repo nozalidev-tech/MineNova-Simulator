@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MineNova Referral</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>👥 Referral</h1>
+       <div class="card">
+
+    <h2>Enter Referral Code</h2>
+
+    <input
+        type="text"
+        id="inviteCode"
+        placeholder="Enter Friend Code">
+
+    <button id="claimReferralBtn">
+
+        🎁 Claim 2000 Coins
+
+    </button>
+
+</div>
+    <div class="card">
+        <h2>Your Referral Code</h2>
+
+        <div id="refCode" class="ref-code">
+
+            MN000001
+
+        </div>
+
+        <button id="copyBtn">
+
+            📋 Copy Code
+
+        </button>
+    </div>
+    <div class="card">
+
+        <h2>Referral Stats</h2>
+
+        <p>
+
+            👤 Total Referrals:
+            <span id="totalReferrals">0</span>
+
+        </p>
+
+        <p>
+
+            💰 Referral Coins:
+            <span id="refCoins">0</span>
+
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Reward</h2>
+
+        <p>
+
+            Invite your 5 friends.
+
+        </p>
+
+        <p>
+
+            🎁 You Get:
+            <b>2000 Coins</b>
+
+        </p>
+
+        <p>
+
+            🎁 Friend Gets:
+            <b>1000 Coins</b>
+
+        </p>
+
+    </div>
+
+    <button
+        class="setting-btn"
+        onclick="window.location.href='earn.html'">
+
+        ⬅ Back
+
+    </button>
+
+</div>
+
+<script src="referral.js"></script>
+
+</body>
+</html>
