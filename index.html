@@ -21,6 +21,27 @@
 
 
 <body>
+<div id="loadingScreen">
+
+<div class="loader">
+
+<img src="mine1.jpeg">
+
+<h1>MineNova Simulator</h1>
+
+<p>Loading...</p>
+
+<div class="progress">
+
+<div class="progressFill"></div>
+
+</div>
+
+<small>Please wait...</small>
+
+</div>
+
+</div>
 
 
 <!-- TOP HEADER -->
@@ -36,7 +57,9 @@
 
 
 <div class="user-box">
-
+<button id="googleLoginBtn" class="google-btn">
+    🔐 Continue with Google
+</button>
 
 <p id="username">
 User Name
@@ -211,6 +234,61 @@ Open performance
     </div>
 
 </div>
+
+
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDf5BDxRH5V5LQkOGt5wOP-6mrIGOPk2TU",
+  authDomain: "minenova-simulator.firebaseapp.com",
+  projectId: "minenova-simulator",
+  storageBucket: "minenova-simulator.firebasestorage.app",
+  messagingSenderId: "73831734825",
+  appId: "1:73831734825:web:019674918d83ab98158638"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+console.log("✅ Firebase Connected");
+const provider = new GoogleAuthProvider();
+
+const googleBtn = document.getElementById("googleLoginBtn");
+
+googleBtn.addEventListener("click", async () => {
+
+    try{
+
+        const result = await signInWithPopup(auth, provider);
+
+        const user = result.user;
+
+        alert("Welcome " + user.displayName);
+
+        document.getElementById("profileName").innerText = user.displayName;
+
+    }catch(error){
+
+        console.log(error);
+
+        alert(error.message);
+
+    }
+
+});
+
+</script>
 
 <script src="script.js"></script>
 
