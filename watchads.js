@@ -39,7 +39,6 @@ watchBtn.addEventListener("click", function () {
     }, 1000);
 
 });
-
 claimBtn.addEventListener("click", function () {
 
     coins += 100;
@@ -48,7 +47,9 @@ claimBtn.addEventListener("click", function () {
 
     alert("🎉 Congratulations!\n\nYou earned +100 Coins.");
 
-    window.location.href = "wallet.html";
+    claimBtn.style.display = "none";
+    timerBox.style.display = "none";
+
+    watchBtn.disabled = false;
 
 });
-
