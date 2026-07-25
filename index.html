@@ -245,7 +245,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+// import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDf5BDxRH5V5LQkOGt5wOP-6mrIGOPk2TU",
@@ -270,13 +276,43 @@ googleBtn.addEventListener("click", async () => {
 
     try{
 
-        const result = await signInWithPopup(auth, provider);
+        // const result = await signInWithPopup(auth, provider);
 
+        // const user = result.user;
+
+        // alert("Welcome " + user.displayName);
+
+        // document.getElementById("profileName").innerText = user.displayName;
         const user = result.user;
 
-        alert("Welcome " + user.displayName);
+const userRef = doc(db, "users", user.uid);
 
-        document.getElementById("profileName").innerText = user.displayName;
+const userSnap = await getDoc(userRef);
+
+if (!userSnap.exists()) {
+
+    await setDoc(userRef, {
+
+        name: user.displayName,
+        email: user.email,
+        coins: 0,
+        xp: 0,
+        level: 1,
+        energy: 100
+
+    });
+
+    console.log("✅ New User Created");
+
+} else {
+
+    console.log("✅ Existing User");
+
+}
+
+document.getElementById("profileName").innerText = user.displayName;
+
+alert("Welcome " + user.displayName);
 
     }catch(error){
 
