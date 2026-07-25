@@ -278,12 +278,18 @@ googleBtn.addEventListener("click", async () => {
 
         const result = await signInWithPopup(auth, provider);
 
-        // const user = result.user;
-
-        // alert("Welcome " + user.displayName);
-
-        // document.getElementById("profileName").innerText = user.displayName;
         const user = result.user;
+        const homeName = document.getElementById("username");
+
+if (homeName) {
+    homeName.innerText = user.displayName;
+}
+
+const profileName = document.getElementById("profileName");
+
+if (profileName) {
+    profileName.innerText = user.displayName;
+}
 
 const userRef = doc(db, "users", user.uid);
 
@@ -310,7 +316,8 @@ if (!userSnap.exists()) {
 
 }
 
-document.getElementById("profileName").innerText = user.displayName;
+// document.getElementById("profileName").innerText = user.displayName;
+// document.getElementById("username").innerText = user.displayName;
 
 alert("Welcome " + user.displayName);
 
