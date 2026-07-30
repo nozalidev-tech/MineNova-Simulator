@@ -24,3 +24,12 @@ if (watchAdsBtn) {
     });
 
 }
+function goBackHome() {
+
+    if (history.length > 1) {
+        history.back();
+    } else {
+        window.location.replace("index.html");
+    }
+
+}
