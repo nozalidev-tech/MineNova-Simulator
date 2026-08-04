@@ -250,8 +250,45 @@ import {
   getFirestore,
   doc,
   getDoc,
-  setDoc
+  setDoc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+if (!userSnap.exists()) {
+
+    await setDoc(userRef, {
+
+        name: user.displayName,
+        email: user.email,
+        coins: 0,
+        xp: 0,
+        level: 1,
+        energy: 100
+
+    });
+
+    console.log("✅ New User Created");
+
+} else {
+
+    console.log("✅ Existing User");
+
+}
+// ===============================
+// LOAD USER DATA
+// ===============================
+
+const userData = userSnap.data();
+
+if (userData) {
+
+    localStorage.setItem("coins", userData.coins);
+    localStorage.setItem("xp", userData.xp);
+    localStorage.setItem("level", userData.level);
+    localStorage.setItem("energy", userData.energy);
+
+    console.log("✅ Firestore Data Loaded");
+
+}
 
 const firebaseConfig = {
   apiKey: "AIzaSyDf5BDxRH5V5LQkOGt5wOP-6mrIGOPk2TU",
