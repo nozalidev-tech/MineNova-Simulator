@@ -180,22 +180,25 @@ if(xpFill && xpProgressText){
     xpProgressText.innerHTML =
     xp + " / " + needXP + " XP (" + percent + "%)";
 }
-     //loguot//
-const logoutBtn = document.getElementById("logoutBtn");
+     //loguot//                                              
+
+     const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
 
-    logoutBtn.addEventListener("click", function () {
+    logoutBtn.addEventListener("click", async function () {
 
         if (confirm("Are you sure you want to logout?")) {
 
-            // Sirf login session remove karo
+            await saveGameData();
+
             localStorage.removeItem("uid");
             localStorage.removeItem("username");
 
             alert("✅ Logout Successful");
 
             window.location.href = "index.html";
+
         }
 
     });

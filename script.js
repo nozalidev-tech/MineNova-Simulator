@@ -296,6 +296,7 @@ function startAutoMiner(){
         }
 
         checkXP();
+        saveGameData();
 
     },autoSpeed);
 
