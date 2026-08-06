@@ -243,7 +243,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup
+  signInWithPopup,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 // import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 import {
@@ -290,6 +291,35 @@ const db = getFirestore(app);
 
 console.log("✅ Firebase Connected");
 const provider = new GoogleAuthProvider();
+// ===============================
+// KEEP USER LOGGED IN AFTER REFRESH
+// ===============================
+
+onAuthStateChanged(auth, async (user) => {
+
+    if (user) {
+
+        console.log("✅ User Already Logged In");
+
+        const homeName = document.getElementById("username");
+
+        if (homeName) {
+            homeName.innerText = user.displayName;
+        }
+
+        const profileName = document.getElementById("profileName");
+
+        if (profileName) {
+            profileName.innerText = user.displayName;
+        }
+
+    } else {
+
+        console.log("❌ User Not Logged In");
+
+    }
+
+});
 
 const googleBtn = document.getElementById("googleLoginBtn");
 if (googleBtn) {
