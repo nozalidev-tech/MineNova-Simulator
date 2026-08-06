@@ -205,7 +205,7 @@ function checkXP(){
         localStorage.setItem("level", level);
         localStorage.setItem("maxEnergy", maxEnergy);
         localStorage.setItem("energy", energy);
-
+            saveGameData();
         if(levelText){
 
             levelText.innerHTML = level;

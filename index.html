@@ -253,43 +253,27 @@ import {
   setDoc,
   updateDoc
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-if (!userSnap.exists()) {
 
-    await setDoc(userRef, {
 
-        name: user.displayName,
-        email: user.email,
-        coins: 0,
-        xp: 0,
-        level: 1,
-        energy: 100
-
-    });
-
-    console.log("✅ New User Created");
-
-} else {
-
-    console.log("✅ Existing User");
-
-}
 // ===============================
 // LOAD USER DATA
 // ===============================
 
-const userData = userSnap.data();
+// const userData = userSnap.data();
 
-if (userData) {
+// if (userData) {
 
-    localStorage.setItem("coins", userData.coins);
-    localStorage.setItem("xp", userData.xp);
-    localStorage.setItem("level", userData.level);
-    localStorage.setItem("energy", userData.energy);
+//     localStorage.setItem("coins", userData.coins);
+//     localStorage.setItem("xp", userData.xp);
+//     localStorage.setItem("level", userData.level);
+//     localStorage.setItem("energy", userData.energy);
 
-    console.log("✅ Firestore Data Loaded");
+//     console.log("✅ Firestore Data Loaded");
 
-}
+// }
+           //firebase//
 
+ 
 const firebaseConfig = {
   apiKey: "AIzaSyDf5BDxRH5V5LQkOGt5wOP-6mrIGOPk2TU",
   authDomain: "minenova-simulator.firebaseapp.com",
@@ -308,7 +292,7 @@ console.log("✅ Firebase Connected");
 const provider = new GoogleAuthProvider();
 
 const googleBtn = document.getElementById("googleLoginBtn");
-
+if (googleBtn) {
 googleBtn.addEventListener("click", async () => {
 
     try{
@@ -329,6 +313,7 @@ if (profileName) {
 }
 
 const userRef = doc(db, "users", user.uid);
+localStorage.setItem("uid", user.uid);
 
 const userSnap = await getDoc(userRef);
 
@@ -351,10 +336,14 @@ if (!userSnap.exists()) {
 
     console.log("✅ Existing User");
 
-}
+    const userData = userSnap.data();
 
-// document.getElementById("profileName").innerText = user.displayName;
-// document.getElementById("username").innerText = user.displayName;
+    localStorage.setItem("coins", userData.coins);
+    localStorage.setItem("xp", userData.xp);
+    localStorage.setItem("level", userData.level);
+    localStorage.setItem("energy", userData.energy);
+
+}
 
 alert("Welcome " + user.displayName);
 
@@ -367,8 +356,31 @@ alert("Welcome " + user.displayName);
     }
 
 });
+}
+
+async function saveGameData() {
+
+    const uid = localStorage.getItem("uid");
+
+    if (!uid) return;
+
+    const userRef = doc(db, "users", uid);
+
+    await updateDoc(userRef, {
+
+        coins: Number(localStorage.getItem("coins")) || 0,
+        xp: Number(localStorage.getItem("xp")) || 0,
+        level: Number(localStorage.getItem("level")) || 1,
+        energy: Number(localStorage.getItem("energy")) || 100
+
+    });
+
+    console.log("✅ Game Saved");
+
+}
 
 </script>
+
 
 <script src="script.js"></script>
 
