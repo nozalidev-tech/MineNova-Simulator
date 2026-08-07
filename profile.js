@@ -190,16 +190,46 @@ if (logoutBtn) {
 
         if (confirm("Are you sure you want to logout?")) {
 
-            
+            window.firebaseSignOut(window.firebaseAuth)
+.then(() => {
 
-            localStorage.removeItem("uid");
-            localStorage.removeItem("username");
+    localStorage.removeItem("uid");
+    localStorage.removeItem("username");
 
-            alert("✅ Logout Successful");
+    alert("✅ Logout Successful");
 
-            window.location.href = "index.html";
+    window.location.href = "index.html";
 
-        }
+})
+.catch((error) => {
+
+    console.log(error);
+
+    alert(error.message);
+
+});
+
+return;
+
+//             localStorage.removeItem("uid");
+//             localStorage.removeItem("username");
+
+//             alert("✅ Logout Successful");
+//             const homeName = document.getElementById("username");
+
+// if (homeName) {
+//     homeName.innerText = "User Name";
+// }
+
+// const profileName = document.getElementById("profileName");
+
+// if (profileName) {
+//     profileName.innerText = "User Name";
+// }
+
+//             window.location.href = "index.html";
+
+}
 
     });
 

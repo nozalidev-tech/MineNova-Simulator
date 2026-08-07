@@ -244,7 +244,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 import {
@@ -271,6 +272,8 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
+window.firebaseAuth = auth;
+window.firebaseSignOut = signOut;
 
 console.log("✅ Firebase Connected");
 const provider = new GoogleAuthProvider();
@@ -298,7 +301,21 @@ onAuthStateChanged(auth, async (user) => {
 
     } else {
 
-        console.log("❌ User Not Logged In");
+    console.log("❌ User Not Logged In");
+
+    const homeName = document.getElementById("username");
+
+    if (homeName) {
+        homeName.innerText = "User Name";
+    }
+
+    const profileName = document.getElementById("profileName");
+
+    if (profileName) {
+        profileName.innerText = "User Name";
+    }
+
+
 
     }
 
