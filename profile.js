@@ -186,11 +186,11 @@ if(xpFill && xpProgressText){
 
 if (logoutBtn) {
 
-    logoutBtn.addEventListener("click", async function () {
+    logoutBtn.addEventListener("click",  function () {
 
         if (confirm("Are you sure you want to logout?")) {
 
-            await saveGameData();
+            
 
             localStorage.removeItem("uid");
             localStorage.removeItem("username");
