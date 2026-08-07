@@ -272,8 +272,7 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 const db = getFirestore(app);
-window.firebaseAuth = auth;
-window.firebaseSignOut = signOut;
+
 
 console.log("✅ Firebase Connected");
 const provider = new GoogleAuthProvider();

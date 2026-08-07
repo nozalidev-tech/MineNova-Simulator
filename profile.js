@@ -190,44 +190,23 @@ if (logoutBtn) {
 
         if (confirm("Are you sure you want to logout?")) {
 
-            window.firebaseSignOut(window.firebaseAuth)
-.then(() => {
+            localStorage.removeItem("uid");
+            localStorage.removeItem("username");
 
-    localStorage.removeItem("uid");
-    localStorage.removeItem("username");
+            alert("✅ Logout Successful");
+            const homeName = document.getElementById("username");
 
-    alert("✅ Logout Successful");
+if (homeName) {
+    homeName.innerText = "User Name";
+}
 
-    window.location.href = "index.html";
+const profileName = document.getElementById("profileName");
 
-})
-.catch((error) => {
+if (profileName) {
+    profileName.innerText = "User Name";
+}
 
-    console.log(error);
-
-    alert(error.message);
-
-});
-
-return;
-
-//             localStorage.removeItem("uid");
-//             localStorage.removeItem("username");
-
-//             alert("✅ Logout Successful");
-//             const homeName = document.getElementById("username");
-
-// if (homeName) {
-//     homeName.innerText = "User Name";
-// }
-
-// const profileName = document.getElementById("profileName");
-
-// if (profileName) {
-//     profileName.innerText = "User Name";
-// }
-
-//             window.location.href = "index.html";
+            window.location.href = "index.html";
 
 }
 
